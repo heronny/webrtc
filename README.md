@@ -81,3 +81,144 @@ Proje önerisinin amacı ve hedefleri açık, ölçülebilir, gerçekçi ve proj
 Projede uygulanacak yöntem ve araştırma teknikleri (veri toplama araçları ve analiz yöntemleri dahil) ilgili literatüre atıf yapılarak açıklanır. Yöntem ve tekniklerin projede öngörülen amaç ve hedeflere ulaşmaya elverişli olduğu ortaya konulur.
 
 Yöntem bölümünün araştırmanın tasarımını, bağımlı ve bağımsız değişkenleri ve istatistiksel yöntemleri kapsaması gerekir. Proje önerisinde herhangi bir ön çalışma veya fizibilite yapıldıysa bunların sunulması beklenir. Yöntemlerin iş paketleri ile ilişkilendirilmesi gerekir.
+
+>WebRTC API üç ana kategoriye ayrılır :
+>1. GetUserMedia: Kamera, mikrofon ve ekran gibi kullanıcı aygıtlarına erişimi sağlar, erişim izin ve yetkilerini düzenler.
+>2. DataChannel: Uç noktalar arasında veri iletimini (kişiye özel mesaj, dosya paylaşımı vb.) sağlar.
+>3. RTCPeerConnection: İki Web-RTC uç noktası arasında iletişim kanalı kurarak ortam içeriklerinin aktarımını sağlar. Ayrıca ortam içerik kalitesini artırmaya yönelik bazı kontroller gerçekleştirir.
+>
+>WebRTC ürünlerinin testleri için Selenium Web Driver test otomasyonu aracından etkin biçimde faydalanılabilmektedir. Video konferans ürünlerinin arayüzleri Selenium ile kolayca kontrol edilebilecek şekilde tasarlanmaktadır. Ancak konu, video ve sesin iletimindeki gecikme ve bozulmaları tespit etmeye geldiğinde otomasyon işe yaramamakta deneyim kalitesinin değerlendirilmesi gerekmektedir (García vd., 2019) (Garcia ve ark., 2019). (Garcia vd., 2017), NUBOMEDIA adını verdikleri bir test altyapısı geliştirerek Google Chrome'un test amacıyla sunduğu videoyu ve videodaki zamanlayıcıyı kullanarak video iletimindeki gecikmeyi ve video kalitesini ölçmeye çalışmışlardır. Bu amaçla görüntü işleme ve zaman bilgisinin videodan alınabilmesi için çalışma yapılmıştır. Ayrıca alıcı ve göndericideki görüntünün eşzamanlı olarak çekilip video kalitesinin karşılaştırılması ve ses kalitesinin değerlendirilmesi için anket uygulanması tekniklerini de önermişlerdir. 
+>
+>(García vd., 2020) performansı otomatik yolla test etmek için uygun bir araç bulunmadığına vurgu yapmış ve bağlantı kalitesi ile ilintili servis kalitesi göstergeleri yanında ortam içeriği kalitesi ile ilintili deneyim kalitesi göstergelerini de dikkate alan bir yöntem önermişlerdir. Bu yönteme göre test amacıyla kullanılan etmenlerin yayınladığı görüntü ve seslerin karşı taraftaki değişim oranı, PVQM (Perceptual Video Quality Measure) ve MOS (Mean Opinion Score) (Viswanathan & Viswanathan, 2005) gibi karşılaştırma algoritmaları ile ölçeklendirilmiştir (Hekstra vd., 2002). 
+>
+>(Taheri vd., 2015) ise WebRTCBench adını verdikleri altyapı üzerinde daha çok servis kalitesi odaklı bir çalışma yürütmüş, video çözünürlüğü, çerçeve sayısı gibi metrikleri belirleyerek farklı platform ve farklı ağlarda iletimin performansının nasıl değiştiğini sorgulamışlardır. 
+>
+>Görüntü benzerliği için kullanılan en pratik yöntemlerden birisi SSIM’dir (Wang vd., 2004). Bu yönteme göre analiz 3 aşamada gerçekleştirilir. Pikseller arasında önce parlaklık (luminance), sonra keskinlik (contrast) ve sonra yapısallık (structure) karşılaştırılarak orijinal resimle benzerlik oranı hesaplanır. Tüm pikseller için yapılan karşılaştırmanın ortalaması -1 ile +1 arasında (genellikle 0 ile 1 arasında) değişir. Algoritmanın testi orijinal resmin kendisi ile karşılaştırılması ile yapılabilir ve +1.0 sonucu çıkıyorsa algoritma beklendiği şekilde çalışıyor anlamı çıkarılır. Şekil 1’de bu çalışmada kullandığı örnek sunulmuştur. Orijinal Einstein fotoğrafı birtakım bozucu etkiler uygulanmış kopyaları ile karşılaştırılmıştır. SSIM modeli uygulaması kolay ve çeşitli alanlarda pratik olarak kullanılabilen etkin bir yöntemdir; örneğin (Peng vd., 2020) SSIM’i ilaç dozajını ölçebilmek için kullanmışlardır. 
+>
+>Ses benzerliği analizi için en bilinen yöntemlerden birisi ise Perceptual Evaluation of Sound Quality (PESQ) yöntemidir (Rix & Hollier, 2000). Bu yöntem telefondaki ses bozulmalarının tespiti için ses uzmanlarının parametrelere göre eşleştirme yaptığı görsel katman ile servis kalitesi parametrelerini birleştirmek amacıyla geliştirilmiştir. Ses kalitesine etki eden en önemli faktörler olan sesin keskinliği, sesin gücü, arkaplan sesleri, gecikme, kırpma ve dış müdahaleleri dikkate alır. Şekil 2’de ticari bir PESQ uygulamasının 1.0 ilâ 5.0 arasında notlandırdığı iki örnekte ses histogramları sunulmuştur (https://www.spearline.com/blog/whatis-pesq/). Ses benzerliği analizi için insanların katıldığı testler de gerçekleştirilmiştir ancak otomasyon açısından çalışmamızda uygulanabilirliği mümkün gözükmemektedir (Mühl vd., 2018) (Hu vd., 2022).
+>
+>Adı geçen yöntemlerin projede geliştirilecek yazılıma nasıl uyarlanacağı iş paketleri kırılımı ile anlatılacaktır. Ayrıca insan kaynakları ve makina/teçhizat gereksinimlerine de değinilecektir.
+>
+>### İŞ PAKETLERİ: 
+>
+>#### İŞ PAKETİ 1: WebRTC Test Sunucu Altyapısının Geliştirilmesi: 
+>
+>Video konferans ürünlerinin testleri, video, ses ve metin gibi farklı türde verileri içermesinden dolayı standart bir şekilde yapılamamakta, tasdik testleri (assertion testing) kısmen tatbik edilebilmektedir. Video ve sesteki bozulmalar ve kayıplar servis kalitesi ölçümleri ile tespit edilebilse de bunun son kullanıcıya yansıması üründen ürüne değişebilmektedir. Test eden son kullanıcı, ses ve görüntüdeki kayıpları birtakım kontrol listeleri yardımıyla yaklaşık bir sayısal büyüklük olarak ifade edebilmektedir. Ancak insan faktörünün ve kullanılan ekipman farklılıklarının getirdiği dezavantajlar (zaman kısıtı, yorgunluk, mikrofon kalitesi, internet hızı vb.) bu ölçümün nesnelliğini sorgulanır hale getirmektedir.
+>
+>Bu projede bu kısıtları aşabilmek ve ürünler hakkında nesnel yargı oluşturmaya yardımcı olabilmek için, bir test aracı geliştirilecektir. Bu araç, herhangi bir insan müdahalesi ya da eforu gerekmeden WebRTC kütüphanesi ile geliştirilmiş bir video konferans aracının işlevsellik, performans ve deneyim kalitesi testlerini gerçekleştirecektir. Bu proje ile bu iş paketi kapsamında proje ekibinin mevcut yetenekleri ile kazanmayı planladığı yetenekleri Tablo 1’de listelenmiştir. 
+>
+>Tablo 1: WebRTC Test Aracı, Mevcut ve Planlanan Yetenekler
+>
+>
+><table><thead>
+>  <tr>
+>    <th></th>
+>    <th><span>Özellik/Yetenek</span></th>
+>    <th><span>Mevcut</span></th>
+>    <th><span>Planlanan</span></th>
+>  </tr></thead>
+><tbody>
+>  <tr>
+>    <td>1</td>
+>    <td>Web kamerası ve mikrofon başlangıç ayarlarının belirlenmesi ve her testte<br>sorulmasının aktive/deaktive edilmesinin sağlanması</td>
+>    <td style="text-align:center;">VAR</td>
+>    <td style="text-align:center;">VAR</td>
+>  </tr>
+>  <tr>
+>    <td>2</td>
+>    <td>Güvenlik ve sertifika ayarlarının otomatik yapılarak teste gereksiz müdahalenin<br>önlenmesi</td>
+>    <td style="text-align:center;">VAR</td>
+>    <td style="text-align:center;">VAR</td>
+>  </tr>
+>  <tr>
+>    <td>3</td>
+>    <td>Test amaçlı oluşturulan çeşitli videoların çok-katılımcılı (multi-party) testlerde<br>kullanılabilmesi</td>
+>    <td style="text-align:center;">VAR</td>
+>    <td style="text-align:center;">VAR</td>
+>  </tr>
+>  <tr>
+>    <td>4</td>
+>    <td>Belirlenen işlevsel test senaryolarının (seçilen katılımcının mikrofonu<br>açma/kapatma, seçilen katılımcıya mesaj atma, gösterim modları vb.) otomatik<br>işletimi ve raporlanması</td>
+>    <td style="text-align:center;">KISMEN<br>(Bazı<br>testler<br>manuel<br>yapılıyor)</td>
+>    <td style="text-align:center;">VAR</td>
+>  </tr>
+>  <tr>
+>    <td>5</td>
+>    <td>Belirlenen performans test senaryolarının (yük testi, sunucu kaynak kullanımı vb.)<br>otomatik işletimi ve raporlanması</td>
+>    <td style="text-align:center;">KISMEN<br>(Bazı<br>testler<br>manuel<br>yapılıyor)</td>
+>    <td style="text-align:center;">VAR</td>
+>  </tr>
+>  <tr>
+>    <td>6</td>
+>    <td>Video ve sesteki bozulma, gecikme ve kayıpların otomatik tespiti ve raporlanması</td>
+>    <td style="text-align:center;">YOK<br>(Manuel<br>yapılıyor)</td>
+>    <td style="text-align:center;">VAR</td>
+>  </tr>
+>  <tr>
+>    <td style="text-align:center;">7</td>
+>    <td style="text-align:center;">İlgili kurumlarla paylaşmak için otomatik karşılaştırma skorlarının (benchmark)<br>oluşturulması ve revizyon (tarih, sürüm vb.) bilgileri ile veritabanında saklanması</td>
+>    <td style="text-align:center;">YOK</td>
+>    <td style="text-align:center;">VAR</td>
+>  </tr>
+></tbody></table>
+>
+>Mevcutta geliştirilmiş olan test aracının yönetim arayüzünden bir kesit Şekil 3a’da yer almaktadır. Bu arayüz ile gerçek katılımcı mikrofon ve kamerasını kullanarak katılabilir, Google Chrome test videosu kullanılabilir (Şekil 3b) ya da önceden hazırlanmış y4m uzantılı video dosyaları yayına gönderilebilir. Bu ayarlar hem yeni oda oluşturmada hem de oluşturulmuş bir sohbet odasına  6 1002ABF-01 Güncelleme Tarihi: 01/01/2024 ziyaretçi olarak katılmakta kullanılabilir.
+>
+>Test aracı daha önceden hazırlanmış y4m uzantılı videoları çevrimsel olarak oynatabilmektedir. Bu ise gerçek katılımcı olmadığı durumda, gerçekçi veri üretebilmek açısından faydalı olmakta ve testlerin güvenilirliğini artırmaktadır. Şekil 4’de testlerden iki enstantane görünmektedir. Şekil 4a’daki durumda, sol üstteki katılımcı gerçek katılımcı olup, diğerleri daha önceden hazırlanmış videolardır. Şekil 4b’de ise performans testi amacıyla testi yöneten gerçek kişi, 24 adet sanal makinadan aynı videoyu otomatik olarak başlatmıştır. Burada bazı görüntü kayıpları olduğu görülmektedir. Bu kayıpların otomatik olarak tespiti, yazılıma İş Paketi 3 kapsamında eklenecek özelllikler ile otomatik olarak gerçekleştirilebilecek ve insan görüşü devreden çıkarılabilecektir.
+> 
+> ##### İş Paketi 1’in Çıktısı:
+>Herhangi bir video konferans ürününü tam otomatik test edebilmek için geliştirilecek ?bir test otomasyon altyapısı ve bu otomasyonu test edebilmek için bir video konferans aracı geliştirilmesi.
+>
+>#### İŞ PAKETİ 2: Video ve Ses Benzerlik Analizi
+>
+>İş Paketi 1 başlığı altında Tablo 1’de listelenen yeni geliştirilecek özelliklerden katma değeri en yüksek olanı, 6 nolu “Video vesesteki bozulma, gecikme ve kayıpların otomatik tespiti ve raporlanması” maddesidir. Bu madde kapsamında, oluşturulacak test videolarının kalitesi literatürdeki video ve ses kalitesi ölçme yöntemlerden faydalanarak hem yayınlayıcı ve hem de alıcı tarafında ölçülecektir. Bu ölçme iki açıdan olacaktır:
+>
+>1. Gecikme (Latency): Video görüntüsüne harf, numara ya da zaman dalgası gibi bir işaret eklenecek, yayıncı ve alıcı taraftaki işaretler karşılaştırılacaktır. Örneğin, Şekil 5’teki resimde VHS formatında bir video kaydı örneği bulunmaktadır. Yazılım Java’da geliştirileceği için Java ile uyumlu pratik bir çözüm araştırılacaktır. Günümüzde OpenCV gibi görüntü işleme ve Tesseract gibi nesne/karakter tanımlama yazılımları ile zaman etiketleri videodan kolayca temin edilebilmektedir.
+><br/>
+>2. Video kalitesi: Videodan alınacak anlık görüntülerin yapısal kalitesinin ölçümü mümkündür. Bu amaçla geliştirilmiş Structural Similarity Index (SSIM) algoritmasının kullanımı pratik olduğundan tercih edilecektir. Herhangi iki video karesi, SSIM yöntemi ile kıyaslanarak görüntüdeki bozulma miktarı tespit edilecektir. Burada ana amaç, yeni ve daha iyi bir SSIM algoritması geliştirmek değildir, mevcut çözümlerin incelenmesi, denenmesi ve gerçekleştirilecek testlere en uygun olanının adapte edilmesidir. Örneğin; resmi bir bütün olarak değil de lokal olarak incelediklerinin ortalamasını olarak inceleyen Mean Structural Similarity Index (MSSIM) daha doğru sonuç verecek gözükmektedir. Bu proje sonunda, denenmiş alternatif çözümlerin karşılaştırmasını sunan bir yayın çıkarılması da hedeflenmektedir. <br/>
+> Projede uygulanacak SSIM testlerinde video konferans aracı, bant genişliğini optimize etmek amacıyla yayıncı tarafında da görüntüyü orijinal haliyle sunamayabilir. Bu nedenle orijinal resim web kamerasının fotoğraf çekme özelliği ile yakaladığı yüksek çözünürlüklü görüntü olacaktır. Bu sayede test edilen yazılımın yayınlamadan önce orijinal görüntüyü ne kadar bozduğu da tespit edilecektir.
+><br/>
+>3. Ses Kalitesi: Videoda olduğu gibi ses benzerliği ölçen yöntemler mevcuttur. PESQ yönteminin pratik uygulamaları denenerek araca uyarlanacaktır. 
+>
+>Gecikme ve kalite testleri karşılıklı olarak birbirini destekler şekilde planlanacaktır. Örneğin, gecikme testinde iki tarafta da aynı zaman damgasındaki görüntülerin SSIM değerleri karşılaştırılacaktır. Ya da tam tersi şekilde SSIM değerleri birbirine çok yakın olduğu durumda zaman damgası, gecikme değerindeki zaman damgası ile karşılaştırılarak doğrulama yapılacaktır.
+>
+>Bu projede planlanan test kurgusu aşağıdaki gibi olacak, uygulama esnasında gerekirse güncellenecektir:
+>
+>1) Test Yönetim Arayüzü çoklu katılım testleri için güncellenecektir. Testi başlatmak için kullanılacak sunucu arayüzü, karşı taraftaki arayüzlere test başlatma, durdurma gibi işaretleri verecektir. Bu amaçla web servis temelli bir yapıya geçilecek ve arayüz web tabanlı olacaktır. Selenium Grid bu amaçla geliştirilmiş bir uygulama olup karşı tarafta testleri yönetmeye, diğer düğümlerden verileri toplayıp konsolide etmeye yardımcı olmaktadır. Bu bir hızlı destek projesi olacağı için ilk etapta yüksek sayıda kullanıcı sayısına ulaşmak amaçlanmamaktadır. 10 tam yüklü (yüksek kaliteli kamera görüntüsü ve yüksek kaliteli ses) sanal kullanıcının tam otomatik teste katılabilmesi ilk aşamada hedeflenen kapasitedir.
+>2) Çeşitli çözünürlüklerde (4K, 2K, 1080p, 720p, 480p) videolar hazırlanıp videolara  belirli periyotlarla beliren ve görüntü işleme teknikleriyle kolayca ayırt edilebilecek filigranlar ya da zaman damgaları eklenecektir.
+>3) Oda başlatıldığında, test katılımcılarının odaya girdiği bilgisi (Acknowledgement) geldiğinde, test yönetim arayüzü aracılığı ile görüntü benzerlik analizi başlatılacaktır. Bu amaçla yayınlanan görüntüdeki filigranın çıktığı anlarda zaman bilgisi loglanacaktır. Ayrıca ekran görüntüsü resim olarak kaydedilecektir. Benzer işlem alıcı tarafta da yapılacaktır.
+>4) Aynı zaman damgasındaki görüntüler SSIM yöntemiyle yapılacak hesaplama sonucuna göre karşılaştırılacaktır. Skor - 1.0 ile +1.0 arasında değişecektir. +1.0 olan görüntüler birbirinin tamamen aynısı olup yayınlayıcı ve alıcı arasında mükemmel bir iletim olduğu anlamını taşıyacaktır.
+>5) Yayınlayıcı ve alıcı arasındaki zaman farkı ise filigranların arasındaki zaman ölçülerek bulunacaktır. Kısaca beklenen gecikmenin olabildiğince az, SSIM skorunun ise 1.0’a yakın olmasıdır.
+>6) 2 ila 5. Adımda yapılanlar ses dosyaları ile seçilen PESQ uygulaması tekrar >edilecektir.
+>
+>#### İŞ PAKETİ 3: Karşılaştırma Skoru Oluşturma (Benchmarking)
+>
+>Gecikme ve video kalitesinin sayısal bir değer olarak ifade edilebilmesi, test sonuçları ve araç karşılaştırmalarının daha nesnel yapılabilmesini sağlayacaktır. Eğer testlerdeki geçti/kaldı durumları, gecikme süresi, videodaki bozulma her araç için standart bir şekilde otomatik olarak notlandırılabilirse, bu ürünlerin potansiyel müşterileri olan kurumlar kendi kriterlerine göre uygun aracı seçebileceklerdir. Örneğin, bazı kurumlar az sayıdaki katılımcıyla yüksek kaliteli toplantılar veya kayıtlar yapmak isteyebilir, bazıları ise yüzlerce katılımcıya kayıpsız bir webinar deneyimi yaşatmak isteyebilir. Bazı kurumların istediği ise eğitim verdiği sınıfta güvenliğin sağlanması ve mahremiyetin korunması olabilir. 
+>
+>Geliştirilecek olan aracın sunduğu raporlar ile hem ürün sahipleri teknik bilgilere sahip olacak hem de karar vericiler yönetimsel düzeyde bir özete erişebileceklerdir. 
+>
+>Bu projede pilot bir uygulama geliştirilecek onun üzerinde gerçekleştirilecek testlerle 3 kategoride (toplantı, eğitim, webinar) ayrı ayrı skorları oluşturulacaktır. Skor için kullanılacak bileşenlerin seçimi, kriter kümesinin geçerlenmesi, kriterlerin ağırlıklandırılması ve herkes tarafından anlaşılacak ve kabul görecek objektif bir skor üretimi bir araştırma konusu olup bu projenin en önemli katkılarından biri olacaktır. Özet olarak bu iş paketinin temel amacı video konferans araçlarının standardizasyonuna yönelik araştırma yapmak olacaktır
+>
+>### İNSAN KAYNAKLARI: 
+>
+>İş Paketi 1 başlığı altında Tablo 1’de listelenen yeni geliştirilecek özelliklerin yazılıma uyarlanmasından ve projenin hedeflerini gerçekleştirmesinden Proje yürütücüsü sorumlu olacaktır. 
+>
+>Görüntü işleme, video ve ses benzerlik analizi konularında danışmandan destek alınacaktır. Test videolarının üretilmesi, Selenium Grid ile test yüklerinin dağıtılması, uçtan uca test otomasyonunun geliştirilmesi, test senaryolarının araca uygulanması ve tüm bu sürecin testlerinden bir lisans öğrencisi sorumlu olacaktır. Öğrenciye daha önceki çalışmalar aktarılacak ve ihtiyaçlara göre uyarlanması beklenecektir. 
+>
+>Görüntü ve ses benzerlik ve kalite analizlerini yapan algoritma ve yöntemlerin araştırılması, örnek görüntü ve seslerle denenmesi, test otomasyon sistemine uyarlanması bir yüksek lisans bursiyerinin sorumluluğunda olacaktır. Bu bursiyerimiz ayrıca video konferans ürünlerinin karşılaştırılmasına yardımcı olmak amacıyla gereksinim duyulacak kriter setini oluşturmak için literatürü tarayacak ve endüstrideki uygulamaları araştıracaktır.
+> 
+>İki bursiyer de proje süresi boyunca (5 ay) projeye katkı sağlayacaktır.
+>
+>### MEVCUT ALTYAPI VE MAKİNA/TEÇHİZAT İHTİYAÇLARI: 
+>
+>Proje bütçesi, video üzerinde yapılacak SSIM, PESQ, PVQM gibi yüksek işlem gücü gerektiren analizleri yapmak için gerekli donanımı satın almaya yeterli olamayacağı için mevcut altyapının kısıtları dâhilinde yapılmaya çalışılacaktır. Mevcut altyapıda kullanılacak bilgisayarlar aşağıdaki gibidir: 
+>1. Asus Rog Zephyrus Dizüstü Bilgisayar, AMD Ryzen 7 6800HS, Nvidia G3060 grafik işlemci, 16 GB RAM, 512 GB SSD 
+>2. Asus Zenbook Dizüstü Bilgisayar, Intel UX334FLC, NVidia MX230 grafik i., 16 GB RAM, 512 GB SSD
+>
+>1 nolu bilgisayara 32 GB RAM takviyesi ile performansının artırılması hedeflenecektir. Maliyeti yaklaşık 4000 TL olup öz imkânlarla çözülecektir. 
+>
+>Dizüstü bilgisayarlardan oluşan mevcut donanımın işlem gücü yeterli olsa da görüntüleri inceleyebilmek için daha **geniş ve yüksek çözünürlüklü ekrana** da ihtiyaç bulunmaktadır. Dizüstü bilgisayarlarda bulunan web kameraları düşük çözünürlükte video yayını yapabilmektedir. Performans testleri için **480p’den 4k’ya farklı çözünürlükte videoları kaydedebilmek ve yayınlayabilmek** amacıyla bu özelliklerde mikrofonlu kameraya ihtiyaç vardır.
+>
+>## 3. PROJE YÖNETİMİ
+>
+>### 3.1. Yönetim Düzeni: İş Paketleri (İP), Görev Dağılımı ve Süreleri
