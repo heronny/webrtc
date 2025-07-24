@@ -219,6 +219,6 @@ Yöntem bölümünün araştırmanın tasarımını, bağımlı ve bağımsız d
 >
 >Dizüstü bilgisayarlardan oluşan mevcut donanımın işlem gücü yeterli olsa da görüntüleri inceleyebilmek için daha **geniş ve yüksek çözünürlüklü ekrana** da ihtiyaç bulunmaktadır. Dizüstü bilgisayarlarda bulunan web kameraları düşük çözünürlükte video yayını yapabilmektedir. Performans testleri için **480p’den 4k’ya farklı çözünürlükte videoları kaydedebilmek ve yayınlayabilmek** amacıyla bu özelliklerde mikrofonlu kameraya ihtiyaç vardır.
 >
->## 3. PROJE YÖNETİMİ
->
->### 3.1. Yönetim Düzeni: İş Paketleri (İP), Görev Dağılımı ve Süreleri
+## 3. PROJE YÖNETİMİ
+
+### 3.1. Yönetim Düzeni: İş Paketleri (İP), Görev Dağılımı ve Süreleri
