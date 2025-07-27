@@ -99,9 +99,9 @@ Yöntem bölümünün araştırmanın tasarımını, bağımlı ve bağımsız d
 >
 >Adı geçen yöntemlerin projede geliştirilecek yazılıma nasıl uyarlanacağı iş paketleri kırılımı ile anlatılacaktır. Ayrıca insan kaynakları ve makina/teçhizat gereksinimlerine de değinilecektir.
 >
->### İŞ PAKETLERİ: 
+>## İŞ PAKETLERİ: 
 >
->#### İŞ PAKETİ 1: WebRTC Test Sunucu Altyapısının Geliştirilmesi: 
+>### İŞ PAKETİ 1: WebRTC Test Sunucu Altyapısının Geliştirilmesi: 
 >
 >Video konferans ürünlerinin testleri, video, ses ve metin gibi farklı türde verileri içermesinden dolayı standart bir şekilde yapılamamakta, tasdik testleri (assertion testing) kısmen tatbik edilebilmektedir. Video ve sesteki bozulmalar ve kayıplar servis kalitesi ölçümleri ile tespit edilebilse de bunun son kullanıcıya yansıması üründen ürüne değişebilmektedir. Test eden son kullanıcı, ses ve görüntüdeki kayıpları birtakım kontrol listeleri yardımıyla yaklaşık bir sayısal büyüklük olarak ifade edebilmektedir. Ancak insan faktörünün ve kullanılan ekipman farklılıklarının getirdiği dezavantajlar (zaman kısıtı, yorgunluk, mikrofon kalitesi, internet hızı vb.) bu ölçümün nesnelliğini sorgulanır hale getirmektedir.
 >
@@ -120,43 +120,43 @@ Yöntem bölümünün araştırmanın tasarımını, bağımlı ve bağımsız d
 ><tbody>
 >  <tr>
 >    <td>1</td>
->    <td>Web kamerası ve mikrofon başlangıç ayarlarının belirlenmesi ve her testte<br>sorulmasının aktive/deaktive edilmesinin sağlanması</td>
+>    <td>Web kamerası ve mikrofon başlangıç ayarlarının belirlenmesi ve her testte sorulmasının aktive/deaktive edilmesinin sağlanması</td>
 >    <td style="text-align:center;">VAR</td>
 >    <td style="text-align:center;">VAR</td>
 >  </tr>
 >  <tr>
 >    <td>2</td>
->    <td>Güvenlik ve sertifika ayarlarının otomatik yapılarak teste gereksiz müdahalenin<br>önlenmesi</td>
+>    <td>Güvenlik ve sertifika ayarlarının otomatik yapılarak teste gereksiz müdahalenin önlenmesi</td>
 >    <td style="text-align:center;">VAR</td>
 >    <td style="text-align:center;">VAR</td>
 >  </tr>
 >  <tr>
 >    <td>3</td>
->    <td>Test amaçlı oluşturulan çeşitli videoların çok-katılımcılı (multi-party) testlerde<br>kullanılabilmesi</td>
+>    <td>Test amaçlı oluşturulan çeşitli videoların çok-katılımcılı (multi-party) testlerde kullanılabilmesi</td>
 >    <td style="text-align:center;">VAR</td>
 >    <td style="text-align:center;">VAR</td>
 >  </tr>
 >  <tr>
 >    <td>4</td>
->    <td>Belirlenen işlevsel test senaryolarının (seçilen katılımcının mikrofonu<br>açma/kapatma, seçilen katılımcıya mesaj atma, gösterim modları vb.) otomatik<br>işletimi ve raporlanması</td>
+>    <td>Belirlenen işlevsel test senaryolarının (seçilen katılımcının mikrofonu açma/kapatma, seçilen katılımcıya mesaj atma, gösterim modları vb.) otomatik işletimi ve raporlanması</td>
 >    <td style="text-align:center;">KISMEN<br>(Bazı<br>testler<br>manuel<br>yapılıyor)</td>
 >    <td style="text-align:center;">VAR</td>
 >  </tr>
 >  <tr>
 >    <td>5</td>
->    <td>Belirlenen performans test senaryolarının (yük testi, sunucu kaynak kullanımı vb.)<br>otomatik işletimi ve raporlanması</td>
->    <td style="text-align:center;">KISMEN<br>(Bazı<br>testler<br>manuel<br>yapılıyor)</td>
+>    <td>Belirlenen performans test senaryolarının (yük testi, sunucu kaynak kullanımı vb.) otomatik işletimi ve raporlanması</td>
+>    <td style="text-align:center;">KISMEN (Bazı testler<br>manuel<br>yapılıyor)</td>
 >    <td style="text-align:center;">VAR</td>
 >  </tr>
 >  <tr>
 >    <td>6</td>
 >    <td>Video ve sesteki bozulma, gecikme ve kayıpların otomatik tespiti ve raporlanması</td>
->    <td style="text-align:center;">YOK<br>(Manuel<br>yapılıyor)</td>
+>    <td style="text-align:center;">YOK (Manuel yapılıyor)</td>
 >    <td style="text-align:center;">VAR</td>
 >  </tr>
 >  <tr>
 >    <td style="text-align:center;">7</td>
->    <td style="text-align:center;">İlgili kurumlarla paylaşmak için otomatik karşılaştırma skorlarının (benchmark)<br>oluşturulması ve revizyon (tarih, sürüm vb.) bilgileri ile veritabanında saklanması</td>
+>    <td style="text-align:center;">İlgili kurumlarla paylaşmak için otomatik karşılaştırma skorlarının (benchmark) oluşturulması ve revizyon (tarih, sürüm vb.) bilgileri ile veritabanında saklanması</td>
 >    <td style="text-align:center;">YOK</td>
 >    <td style="text-align:center;">VAR</td>
 >  </tr>
@@ -166,10 +166,10 @@ Yöntem bölümünün araştırmanın tasarımını, bağımlı ve bağımsız d
 >
 >Test aracı daha önceden hazırlanmış y4m uzantılı videoları çevrimsel olarak oynatabilmektedir. Bu ise gerçek katılımcı olmadığı durumda, gerçekçi veri üretebilmek açısından faydalı olmakta ve testlerin güvenilirliğini artırmaktadır. Şekil 4’de testlerden iki enstantane görünmektedir. Şekil 4a’daki durumda, sol üstteki katılımcı gerçek katılımcı olup, diğerleri daha önceden hazırlanmış videolardır. Şekil 4b’de ise performans testi amacıyla testi yöneten gerçek kişi, 24 adet sanal makinadan aynı videoyu otomatik olarak başlatmıştır. Burada bazı görüntü kayıpları olduğu görülmektedir. Bu kayıpların otomatik olarak tespiti, yazılıma İş Paketi 3 kapsamında eklenecek özelllikler ile otomatik olarak gerçekleştirilebilecek ve insan görüşü devreden çıkarılabilecektir.
 > 
-> ##### İş Paketi 1’in Çıktısı:
+> #### İş Paketi 1’in Çıktısı:
 >Herhangi bir video konferans ürününü tam otomatik test edebilmek için geliştirilecek ?bir test otomasyon altyapısı ve bu otomasyonu test edebilmek için bir video konferans aracı geliştirilmesi.
 >
->#### İŞ PAKETİ 2: Video ve Ses Benzerlik Analizi
+>### İŞ PAKETİ 2: Video ve Ses Benzerlik Analizi
 >
 >İş Paketi 1 başlığı altında Tablo 1’de listelenen yeni geliştirilecek özelliklerden katma değeri en yüksek olanı, 6 nolu “Video vesesteki bozulma, gecikme ve kayıpların otomatik tespiti ve raporlanması” maddesidir. Bu madde kapsamında, oluşturulacak test videolarının kalitesi literatürdeki video ve ses kalitesi ölçme yöntemlerden faydalanarak hem yayınlayıcı ve hem de alıcı tarafında ölçülecektir. Bu ölçme iki açıdan olacaktır:
 >
@@ -191,7 +191,7 @@ Yöntem bölümünün araştırmanın tasarımını, bağımlı ve bağımsız d
 >5) Yayınlayıcı ve alıcı arasındaki zaman farkı ise filigranların arasındaki zaman ölçülerek bulunacaktır. Kısaca beklenen gecikmenin olabildiğince az, SSIM skorunun ise 1.0’a yakın olmasıdır.
 >6) 2 ila 5. Adımda yapılanlar ses dosyaları ile seçilen PESQ uygulaması tekrar >edilecektir.
 >
->#### İŞ PAKETİ 3: Karşılaştırma Skoru Oluşturma (Benchmarking)
+>### İŞ PAKETİ 3: Karşılaştırma Skoru Oluşturma (Benchmarking)
 >
 >Gecikme ve video kalitesinin sayısal bir değer olarak ifade edilebilmesi, test sonuçları ve araç karşılaştırmalarının daha nesnel yapılabilmesini sağlayacaktır. Eğer testlerdeki geçti/kaldı durumları, gecikme süresi, videodaki bozulma her araç için standart bir şekilde otomatik olarak notlandırılabilirse, bu ürünlerin potansiyel müşterileri olan kurumlar kendi kriterlerine göre uygun aracı seçebileceklerdir. Örneğin, bazı kurumlar az sayıdaki katılımcıyla yüksek kaliteli toplantılar veya kayıtlar yapmak isteyebilir, bazıları ise yüzlerce katılımcıya kayıpsız bir webinar deneyimi yaşatmak isteyebilir. Bazı kurumların istediği ise eğitim verdiği sınıfta güvenliğin sağlanması ve mahremiyetin korunması olabilir. 
 >
@@ -199,7 +199,7 @@ Yöntem bölümünün araştırmanın tasarımını, bağımlı ve bağımsız d
 >
 >Bu projede pilot bir uygulama geliştirilecek onun üzerinde gerçekleştirilecek testlerle 3 kategoride (toplantı, eğitim, webinar) ayrı ayrı skorları oluşturulacaktır. Skor için kullanılacak bileşenlerin seçimi, kriter kümesinin geçerlenmesi, kriterlerin ağırlıklandırılması ve herkes tarafından anlaşılacak ve kabul görecek objektif bir skor üretimi bir araştırma konusu olup bu projenin en önemli katkılarından biri olacaktır. Özet olarak bu iş paketinin temel amacı video konferans araçlarının standardizasyonuna yönelik araştırma yapmak olacaktır
 >
->### İNSAN KAYNAKLARI: 
+>## İNSAN KAYNAKLARI: 
 >
 >İş Paketi 1 başlığı altında Tablo 1’de listelenen yeni geliştirilecek özelliklerin yazılıma uyarlanmasından ve projenin hedeflerini gerçekleştirmesinden Proje yürütücüsü sorumlu olacaktır. 
 >
@@ -209,7 +209,7 @@ Yöntem bölümünün araştırmanın tasarımını, bağımlı ve bağımsız d
 > 
 >İki bursiyer de proje süresi boyunca (5 ay) projeye katkı sağlayacaktır.
 >
->### MEVCUT ALTYAPI VE MAKİNA/TEÇHİZAT İHTİYAÇLARI: 
+>## MEVCUT ALTYAPI VE MAKİNA/TEÇHİZAT İHTİYAÇLARI: 
 >
 >Proje bütçesi, video üzerinde yapılacak SSIM, PESQ, PVQM gibi yüksek işlem gücü gerektiren analizleri yapmak için gerekli donanımı satın almaya yeterli olamayacağı için mevcut altyapının kısıtları dâhilinde yapılmaya çalışılacaktır. Mevcut altyapıda kullanılacak bilgisayarlar aşağıdaki gibidir: 
 >1. Asus Rog Zephyrus Dizüstü Bilgisayar, AMD Ryzen 7 6800HS, Nvidia G3060 grafik işlemci, 16 GB RAM, 512 GB SSD 
@@ -219,6 +219,235 @@ Yöntem bölümünün araştırmanın tasarımını, bağımlı ve bağımsız d
 >
 >Dizüstü bilgisayarlardan oluşan mevcut donanımın işlem gücü yeterli olsa da görüntüleri inceleyebilmek için daha **geniş ve yüksek çözünürlüklü ekrana** da ihtiyaç bulunmaktadır. Dizüstü bilgisayarlarda bulunan web kameraları düşük çözünürlükte video yayını yapabilmektedir. Performans testleri için **480p’den 4k’ya farklı çözünürlükte videoları kaydedebilmek ve yayınlayabilmek** amacıyla bu özelliklerde mikrofonlu kameraya ihtiyaç vardır.
 >
-## 3. PROJE YÖNETİMİ
+# 3. PROJE YÖNETİMİ
 
-### 3.1. Yönetim Düzeni: İş Paketleri (İP), Görev Dağılımı ve Süreleri
+## 3.1. Yönetim Düzeni: İş Paketleri (İP), Görev Dağılımı ve Süreleri
+
+Projede yer alacak başlıca iş paketleri ve hedefleri, her bir iş paketinin kimler tarafından hangi sürede gerçekleştirileceği, başarı ölçütü ve projenin başarısına katkısı “İş-Zaman Çizelgesi” doldurularak verilir. Her bir iş paketinde görev alacak yürütücü, araştırmacı ve personel ayrıntılı olarak belirtilir. Literatür taraması, sonuç raporu hazırlama aşaması, proje sonuçlarının paylaşımı, makale yazımı ve malzeme alımı ayrı birer iş paketi olarak <ins>gösterilmemelidir</ins>.
+
+Başarı ölçütü olarak her bir iş paketinin hangi kriterleri sağladığında başarılı sayılacağı açıklanır. Başarı ölçütü, ölçülebilir ve izlenebilir nitelikte olacak şekilde nicel veya nitel ölçütlerle (ifade, sayı, yüzde, vb.) belirtilir.
+
+<h3 style="text-align:center;">İŞ-ZAMAN ÇİZELGESİ(*)</h4>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-uzvj{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-uzvj">İP No</th>
+    <th class="tg-uzvj">İş Paketlerinin Adı ve Hedefleri</th>
+    <th class="tg-uzvj">Kim(ler) Tarafından Gerçekleştirileceği</th>
+    <th class="tg-uzvj">Zaman Aralığı (..-.. Ay)</th>
+    <th class="tg-uzvj">Başarı Ölçütü ve Projenin Başarısına Katkısı</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-9wq8">1</td>
+    <td class="tg-9wq8">WebRTC Test Sunucu Altyapısının Geliştirilmesi</td>
+    <td class="tg-9wq8">Yürütücü<sup>1</sup>,<br>Yüksek Lisans Bursiyeri<sup>4</sup>,<br>Lisans Bursiyeri<sup>5</sup></td>
+    <td class="tg-9wq8">0-4.ay</td>
+    <td class="tg-0pky">a-Pilot WebRTC uygulamasının geliştirilmesi,<br>b-Selenium ekosisteminin (Webdriver ve Grid) video ve ses benzerlik analizi haricindeki işlevler için çalışır hale getirilmesi ve<br>c-En az 30 işlevsel test durumunun oluşturulması ve pilot sisteme uyarlanması, testlerde %100 başarı raporlanması (%30)<br><br>Bir yüksek lisans bursiyerinin projedeki tüm çalışmalarını jüriye sunmak için tez haline getirmiş olması (%10)</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8">2</td>
+    <td class="tg-9wq8">Video ve Ses Benzerlik Analizi</td>
+    <td class="tg-9wq8">Yürütücü<sup>1</sup>,<br>Danışman1<sup>2</sup>,<br>Yüksek Lisans Bursiyeri<sup>4</sup>,<br>Lisans Bursiyeri<sup>5</sup></td>
+    <td class="tg-9wq8">1-5.ay</td>
+    <td class="tg-0pky">Görüntü ve ses kalitesi performans test kriterlerinin (gecikme ve benzerlik oranı) belirlenmesi (%10)<br><br>SSIM, PEVQ, VAMF ve NARVAL arasından en az iki tanesinin video konferans testlerinde (İP1’de geliştirilen sisteme) uyarlanması, tam otomatik test yaptırılarak otomatik test raporu üretilebilir olması (%20)<br><br>WebRTC için video ve ses benzerlik analiz yöntemlerinin araştırılması ve bu konuda bir yayın taslağının bir konferans ya da dergiye gönderilmiş olması (%20)</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8">3</td>
+    <td class="tg-9wq8">Karşılaştırma Skoru Oluşturma(Benchmarking)<br></td>
+    <td class="tg-9wq8">Yürütücü<sup>1</sup>,<br>Danışman2<sup>3</sup>,<br>Yüksek Lisans Bursiyeri<sup>4</sup></td>
+    <td class="tg-9wq8">4-5.ay</td>
+    <td class="tg-0pky">Bir video konferans ürününün sahip olması gereken işlev ve kalite gereksinimlerinin belirlenerek ağırlıklandırıldığı, karşılaştırma amacı ile üretilmiş standart bir notlandırma modeli sunan yayının bir dergi ya da konferansa gönderilmiş olması (%10)</td>
+  </tr>
+</tbody></table>
+
+<sup>**(*)** Çizelgedeki satırlar gerektiği kadar genişletilebilir ve çoğaltılabilir.İş paketlerinin toplam süresi 12 ayı geçemez.</sup>
+
+#### <sup>1</sup> Proje Yürütücüsü: Dr.Öğr.Üyesi Savaş Öztürk (Marmara Üniversitesi, Teknoloji Fakültesi, Elektrik-Elektronik Müh. Bölümü)
+
+#### <sup>2</sup> Danışman1: Doç.Dr.Uğur Demir (Marmara Üniversitesi, Teknoloji Fakültesi, Elektrik-Elektronik Müh. Bölümü)
+
+&nbsp;2210861 ve 121E492 nolu TÜBİTAK destekli projelerde Skolyoz tedavisi için tedavi öncesi teşhiste bir planlama
+asistanı ve simülatörü geliştirip ardından tedavi için manyetik aktüatör ve kontrol ünitesinin geliştirilmesine katkıda
+bulunmuştur. Bu projelerde MR görüntüsünden üç boyutlu omurga modelinin çıkarılması esnasında edindiği tecrübeden
+bu projede de faydalanılması beklenmektedir. 
+
+#### <sup>3</sup> Danışman2: Dr.Öğr.Üyesi Veysel Gökhan Böcekçi (Marmara Üniversitesi, Teknoloji Fakültesi, ElektrikElektronik Müh. Bölümü)
+&nbsp;Video Görüntü İşleme Uygulamaları üzerinde çalışmalar yapmakta ve EEM7041 Video İşleme Uygulamaları yüksek
+lisans dersini vermektedir. Görüntü ve Video kalitesinin değerlendirilmesi için kullanılacak benzerlik ve kalite ölçüm
+yöntemleri üzerine destek verecektir. 
+
+#### <sup>4</sup> Yüksek Lisans Bursiyeri:
+&nbsp;Marmara Üniversitesi Elektrik-Elektronik Mühendisliği yüksek lisans programı öğrencisi olan ve ders dönemini Ocak 2025’te tamamlayacak olan Doğukan Biçer’in tez konusu, video konferans uygulamalarında video ve ses kalitesinin tam otomatik testleri olacaktır.
+
+#### <sup>5</sup> Lisans Bursiyeri:
+&nbsp;Marmara Üniversitesi Elektrik-Elektronik Mühendisliği lisans programı öğrencilerinden belirlenecek bir tanesi projede geliştirme ve test işleri için görevlendirilecek, bitirme tezi konusunda destek verilecektir. 
+
+## 3.2. Risk Yönetimi
+
+Projenin başarısını olumsuz yönde etkileyebilecek riskler ve bu risklerle karşılaşıldığında projenin başarıyla yürütülmesini
+sağlamak için alınacak tedbirler (B Planı) ilgili iş paketleri belirtilerek ana hatlarıyla aşağıdaki Risk Yönetimi Tablosunda
+ifade edilir. B planlarının uygulanması projenin temel hedeflerinden sapmaya yol açmamalıdır.
+<h3 style="text-align:center;"> RİSK YÖNETİMİ TABLOSU (*)</h4>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-uzvj{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-nrix{text-align:center;vertical-align:middle}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-uzvj">İP No</th>
+    <th class="tg-uzvj">En Önemli Riskler<br></th>
+    <th class="tg-uzvj">Risk Yönetimi (B Planı)<br></th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-9wq8">1</td>
+    <td class="tg-9wq8">Döviz kurundaki değişim yüzünden makineteçhizat alımında zorluk yaşanması<br></td>
+    <td class="tg-9wq8">Alternatif konfigürasyonlar değerlendirilecektir.<br></td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8">2</td>
+    <td class="tg-9wq8">SSIM algoritmasının uygulanmasında düşünülen, test görüntüsüne harf ve rakam ekleme işleminin ya da okuma işleminin başarısız olması<br></td>
+    <td class="tg-9wq8">Bu amaçla açık kaynaklı hazır videolar bulunması ya da sentetik videolar üretilmesi (son zamanlarda yaygınlaşmaya başlayan üretken yapay zeka tarafından üretilmiş videolar dahil) araştırılacaktır.<br></td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8">3</td>
+    <td class="tg-9wq8">SSIM algoritmasının yazılıma doğru şekilde uyarlanamaması<br></td>
+    <td class="tg-9wq8">PEVQ, VAMF ve NARVAL gibi alternatifler üzerinde çalışılacaktır.<br></td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">4</td>
+    <td class="tg-0lax">Dağıtık testleri yapabilmek için gerekli uygun konfigürasyon yeterli bilgisayar bulunamaması</td>
+    <td class="tg-0lax">NUBOMEDIA projesinde Garcia ve vd. yaptığı gibi güçlü bir bilgisayarda sanallaştırma yöntemiyle yük oluşturulacaktır.</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">5</td>
+    <td class="tg-0lax">Selenium Grid’in istemci makinalarda ekran görüntülerini yakalama ve geri göndermede ya da benzerlik analizlerini beklendiği gibi yapabilmeden yeterli olamaması</td>
+    <td class="tg-9wq8">Cypress gibi alternatif test otomasyonu araçları değerlendirilecektir.</td>
+  </tr>
+</tbody></table>
+
+<sup>**(*)** Tablodaki satırlar gerektiği kadar genişletilebilir ve çoğaltılabilir.
+</sup>
+
+# 4. YAYGIN ETKİ
+
+Proje başarıyla gerçekleştirildiği takdirde projeden elde edilmesi öngörülen çıktı(lar) ve etki(ler kısa ve net cümlelerle ilgili
+bölümde belirtilmelidir.
+
+## 4.1. Projeden Elde Edilmesi Öngörülen Çıktılara İlişkin Bilgiler
+
+Bu bölümde, projeden elde edilmesi öngörülen çıktılara yer verilmelidir. Söz konusu çıktılar, amaçlarına göre belirlenen
+kategorilere ayrılarak belirtilmeli, nicel gösterge ve hedeflere dayandırılmalı ve varsa bu çıktıları kullanacak
+kurum/kuruluş(lar)a ilişkin bilgi verilmelidir. Her bir çıktının elde edilmesinin öngörüldüğü zaman aralığı belirtilmelidir.
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-wa1i{font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-nrix{text-align:center;vertical-align:middle}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-wa1i">Çıktı Türü</th>
+    <th class="tg-wa1i">Çıktı</th>
+    <th class="tg-wa1i">Çıktının Elde Edilmesi Öngörülen Zaman Aralığı</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-nrix"><span style="font-weight:bold">Bilimsel/Akademik Çıktılar</span> (Bildiri, Makale, Kitap Bölümü, Kitap vb.):</td>
+    <td class="tg-nrix">Proje çıktısı olarak 1 adet uluslararası dergi makalesi ve 2 adet (1 uluslararası, 1 ulusal) konferans bildirisi yayımlanması beklenmektedir. Dergi makalelerinin SCI indekslerinde taranan dergilerde yayımlanması, konferans bildirilerinin ise IEEE, ACM gibi yüksek profilli uluslararası yazılım mühendisliği, yazılım test mühendisliği ile IEEE Sinyal İşleme Uygulamaları (SIU) konferansında sunulması planlanmaktadır.</td>
+    <td class="tg-wa1i">6-12. aylar</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix"><span style="font-weight:bold">Ekonomik/Ticari/Sosyal Çıktılar</span> (Ürün, Prototip, Patent, Faydalı Model, Üretim İzni, Tescil, Görsel/İşitsel Arşiv, Envanter/Veri Tabanı/Belgeleme Üretimi, Telife Konu Olan Eser, Spin-off/Start- up Şirket vb.):</td>
+    <td class="tg-nrix">Ürün: Proje sonunda geliştirilen aracın yerli video konferans ürünlerinin testleri için kullanılması planlanmaktadır. Bu araç, dışa bağımlılığı azaltacak ve yerli video konferans ürünlerinin standart bir test sürecinden geçerek sertifikalandırılmasının yolu açılacaktır. <br><br>Ürünün Turkcell, Aselsan (Bites), Havelsan, Netaş, May Siber gibi yaklaşık 20 yerli video konferans sistemi üreticisi tarafından kullanılabilme potansiyeli vardır. <br><br>Start-up: Projenin başarılı olması halinde ürünleştirilerek ticarileşmesinin ve bir girişim kurulmasının önü açılacaktır. Sonraki aşamada TÜBİTAK TEYDEB başta olmak üzere yatırım fırsatları değerlendirilecektir. WebRTC teknolojisi sadece video konferans uygulaması üretiminde değil eğitim, otonom sistemler, oyun&amp;eğlence ve sağlık gibi sektörlerde potansiyeli olan gelişmeye açık bir teknolojidir. Bu nedenle bu girişimin önemli bir boşluğu dolduracağı değerlendirilmektedir.</td>
+    <td class="tg-wa1i">6-12. aylar</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix"><span style="font-weight:bold">Araştırmacı Yetiştirilmesine Yönelik Çıktılar</span> (Yüksek Lisans/ Doktora/Tıpta Uzmanlık Tezleri):</td>
+    <td class="tg-nrix">Projenin araştırma soruları bir yüksek lisans tezinin belkemiğini oluşturacaktır. Bu nedenle projenin en önemli çıktılarından birisi bir yüksek lisans araştırmacısı yetiştirmek olacaktır. <br><br>Bir lisans öğrencisi ise test otomasyonunda edineceği tecrübe ile gerek yazılım testi gerekse haberleşme ve video konferans alanında çalışan firmalarda kariyer fırsatı veya proje tecrübesi nedeniyle akademide kariyer imkanı yakalamasının önü açılacaktır.</td>
+    <td class="tg-wa1i">6-12. aylar</td>
+  </tr>
+</tbody></table>
+
+<sup>**(*)** Proje başlangıcından itibaren 6 aylık süreler halinde belirtilmelidir (Örn. 0-6 ay/6-12 ay/12-18 ay vb.). 
+</sup>
+
+## 4.2. Projeden Elde Edilmesi Öngörülen Etkilere İlişkin Bilgiler
+
+Proje başarıyla gerçekleştirildiği takdirde projeden elde edilmesi öngörülen
+- Toplumsal/kültürel etki,
+- Akademik etki,
+-  Ekonomik etki,
+-  Ulusal Güvenlik etkisi
+
+Proje Başvuru Sisteminde (PBS) seçilen [12. Kalkınma Planı](https://www.resmigazete.gov.tr/eskiler/2023/11/20231101M1-1-1.pdf) hedefleri ve politikaları çerçevesinde hedef kitle/alan belirtilerek açıklanmalıdır. Beklenen etkiler doğrulanabilir ve ölçülebilir olmalıdır. Etkilerin elde edilme zamanına ilişkin öngörüler belirtilmelidir.
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-wa1i{font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-wa1i">Etki Türü</th>
+    <th class="tg-wa1i">Etki</th>
+    <th class="tg-wa1i">Etkinin Elde Edilmesi Öngörülen Zaman</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:bold">Toplumsal/Kültürel Etki: </span><br>&nbsp;• Yaşam Kalitesine Katkı, <br>&nbsp;• Sürdürülebilir Çevre ve Enerjiye Katkı, <br>&nbsp;• Refah veya Eğitim Seviyesinin İyileştirilmesine Katkı, <br>&nbsp;• Ülke ya da Dünya Düzeyinde Önemli Bir Sosyal Soruna Getirilecek Çözümler vb.</td>
+    <td class="tg-0lax">Projede toplumsal ya da kültürel bir etki amaçlanmamaktadır.</td>
+    <td class="tg-wa1i">-</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:bold">Akademik Etki:</span> <br>&nbsp;• Yeni Ar-Ge Kararları, <br>&nbsp;• Ulusal/Uluslararası Ar-Ge İşbirlikleri, <br>&nbsp;• Araştırmacı Sayısındaki ve Niteliğindeki Değişim, <br>&nbsp;• Üniversite- Sanayi İşbirliklerine Katkı vb.</td>
+    <td class="tg-0lax">(590. İleri dijital teknolojilerin geliştirilmesi, yaygınlaştırılması ve bu teknolojileri kullanacak işgücünün yetiştirilmesini desteklemek amacıyla mekanizmalar kurgulanacaktır.) <br><br>Video konferans ürünleri testlerinde video ve ses analiz yaparak testlerin otomasyona geçirilmesi akademik açıdan yeni ve önemli bir konudur. Bu proje ile ülkemizde bu konuda araştırmacıların bulunması önemli etki oluşturacaktır. <br><br>Proje tamamlandığında bir yüksek lisans tezinin de sunulmaya hazır hale getirileceği değerlendirilmektedir. <br><br>(586. Açık kaynak kodlu yazılım ekosistemi geliştirilecektir.) 2017’de tamamlanan NUBOmedia gibi AB projelerinde yer alabilmek için önemli bir fırsat olacaktır. Bu amaçla endüstriden paydaş arayışına girilecek ve AB projeleri için çalışmalara başlanacaktır.</td>
+    <td class="tg-wa1i">0-12. aylar</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:bold">Ekonomik Etki: </span><br>&nbsp;• Potansiyel Sektörel Uygulama Alanları, <br>&nbsp;• Küresel Pazar Öngörüleri, <br>&nbsp;• İstihdam Katkısı, <br>&nbsp;• Rekabetçilik (İhracata Etkisi, İthal İkamesi, Yeni Firmaların Oluşumu, Yabancı Sermaye Yatırımının Tetiklenmesi vb.)</td>
+    <td class="tg-0lax">(,579. BİT sektöründe yerli ürün ve hizmet gelişimi desteklenerek yerlilik oranları artırılacaktır.) Video konferans ürünleri pazarı son iki yılda olağanüstü bir şekilde büyümüştür ve uzaktan çalışmanın yaygınlaşması ile büyümeye de devam edecektir. Bu nedenle WebRTC gibi güncel teknolojileri geliştirme ve test ihtiyacı daima olacaktır. Ekonomik ve teknolojik açıdan dışa bağımlılığımızı azaltacak bu araç ülkemizde ilk defa tasarlanmış olacaktır. <br><br>(582.1. Yerli ürünlerin uluslararası pazarda rekabetçi biçimde yer almalarını sağlayacak şekilde geliştirilmesi desteklenecektir.) <br><br>Dronelar ve robotlarda da pratikliği nedeniyle tercih edilmeye başlanan WebRTC teknolojisi kullanımı yaygınlaştırılarak maliyet tasarrufu sağlanacaktır.</td>
+    <td class="tg-wa1i">6-12. aylar</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:bold">Ulusal Güvenlik Etkisi: </span><br>&nbsp;• Siber güvenlik, <br>&nbsp;• Enerji güvenliği, <br>&nbsp;• Sınır güvenliği, <br>&nbsp;• Ekonomik güvenlik vb.</td>
+    <td class="tg-0lax">(590.1. Kamu kurumlarının ve özel sektörün dijital teknolojiler alanında ortak çözümler geliştirecekleri ekosistem güçlendirilecektir.) <br>Projenin çıkış noktası, özellikle pandemi ile ortaya çıkan güvenli yerli video konferans ürünlerine olan büyük ihtiyaç ve mevcut ürünlerin standart ve objektif bir şekilde test edilebilmesidir. Bu amaçla, projenin güvenlik ve veri mahremiyeti açısından faydası yadsınamaz.</td>
+    <td class="tg-wa1i">6-18.aylar</td>
+  </tr>
+</tbody></table>
+
+# BELİRTMEK İSTEDİĞİNİZ DİĞER KONULAR
+
+Sadece proje önerisinin değerlendirilmesine katkı sağlayabilecek bilgi/veri (grafik, tablo, vb.) eklenebilir. 
+
+# BAŞVURU FORMU EKLERİ
+
+# EK-1: KAYNAKLAR
+
+# EK-2: BÜTÇE VE GEREKÇESİ
